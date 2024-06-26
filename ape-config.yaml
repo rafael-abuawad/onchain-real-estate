@@ -1,0 +1,5 @@
+name: onchain-real-estate
+
+plugins:
+  - name: vyper
+  - name: foundry
