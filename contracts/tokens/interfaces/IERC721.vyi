@@ -1,0 +1,155 @@
+# pragma version ~=0.4.0
+# Events
+
+event RoleMinterChanged:
+    minter: address
+    status: bool
+    
+event OwnershipTransferred:
+    previous_owner: address
+    new_owner: address
+
+event Approval:
+    owner: address
+    approved: address
+    token_id: uint256
+
+event ApprovalForAll:
+    owner: address
+    operator: address
+    approved: bool
+
+event Transfer:
+    sender: address
+    receiver: address
+    token_id: uint256
+
+event MetadataUpdate:
+    _tokenId: uint256
+
+# Functions
+
+@view
+@external
+def owner() -> address:
+    ...
+
+@view
+@external
+def eip712Domain() -> (bytes1, String[50], String[20], uint256, address, bytes32, DynArray[uint256, 32]):
+    ...
+
+@view
+@external
+def supportsInterface(interface_id: bytes4) -> bool:
+    ...
+
+@view
+@external
+def balanceOf(owner: address) -> uint256:
+    ...
+
+@view
+@external
+def ownerOf(token_id: uint256) -> address:
+    ...
+
+@payable
+@external
+def approve(to: address, token_id: uint256):
+    ...
+
+@view
+@external
+def getApproved(token_id: uint256) -> address:
+    ...
+
+@external
+def setApprovalForAll(operator: address, approved: bool):
+    ...
+
+@payable
+@external
+def transferFrom(owner: address, to: address, token_id: uint256):
+    ...
+
+@payable
+@external
+def safeTransferFrom(owner: address, to: address, token_id: uint256, data: Bytes[1024]):
+    ...
+
+@view
+@external
+def tokenURI(token_id: uint256) -> String[512]:
+    ...
+
+@view
+@external
+def totalSupply() -> uint256:
+    ...
+
+@view
+@external
+def tokenByIndex(index: uint256) -> uint256:
+    ...
+
+@view
+@external
+def tokenOfOwnerByIndex(owner: address, index: uint256) -> uint256:
+    ...
+
+@external
+def burn(token_id: uint256):
+    ...
+
+@external
+def safe_mint(owner: address, uri: String[432]):
+    ...
+
+@external
+def set_minter(minter: address, status: bool):
+    ...
+
+@external
+def permit(spender: address, token_id: uint256, deadline: uint256, v: uint8, r: bytes32, s: bytes32):
+    ...
+
+@view
+@external
+def DOMAIN_SEPARATOR() -> bytes32:
+    ...
+
+@external
+def transfer_ownership(new_owner: address):
+    ...
+
+@external
+def renounce_ownership():
+    ...
+
+@view
+@external
+def name() -> String[25]:
+    ...
+
+@view
+@external
+def symbol() -> String[5]:
+    ...
+
+@view
+@external
+def isApprovedForAll(arg0: address, arg1: address) -> bool:
+    ...
+
+@view
+@external
+def is_minter(arg0: address) -> bool:
+    ...
+
+@view
+@external
+def nonces(arg0: uint256) -> uint256:
+    ...
+
+
