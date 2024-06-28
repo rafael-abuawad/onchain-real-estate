@@ -1,5 +1,10 @@
 name: onchain-real-estate
 
 plugins:
-  - name: vyper
+  - name: solidity
   - name: foundry
+
+dependencies:
+  - name: openzeppelin
+    github: OpenZeppelin/openzeppelin-contracts
+    version: 5.0.2
