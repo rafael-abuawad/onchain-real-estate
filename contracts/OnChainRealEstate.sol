@@ -9,7 +9,7 @@ import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
 contract OnChainRealEstate is ERC721, ERC721URIStorage, Ownable {
     uint256 private _nextTokenId;
 
-    constructor(address initialOwner) ERC721("On Chain Real Estate", "OCRS") Ownable(initialOwner) {}
+    constructor(address initialOwner) ERC721("On Chain Real Estate", "OCRE") Ownable(initialOwner) {}
 
     function safeMint(address to, string memory uri) public onlyOwner {
         uint256 tokenId = _nextTokenId++;
